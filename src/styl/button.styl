@@ -1,0 +1,138 @@
+@import 'utils.styl'
+$-medium-padding-vertical = 12px
+$-medium-padding-horizontal = 20px
+$-small-padding-vertical = 9px 
+$-small-padding-horizontal = 12px
+.fv-button
+	display inline-block
+	margin 0
+	line-height 1
+	white-space nowrap
+	border-radius $--border-radius
+	border 1px solid #FFFFFF
+	text-align center
+	-webkit-appearance none
+	outline none
+	transition 0.15s
+	box-sizing border-box
+	user-select none
+	cursor pointer
+	&--default
+		color $--color-text
+		border-color $--color-border
+		background-color #FFFFFF
+		&:hover
+			color $--color-primary + #111111
+			border-color $--color-primary + #111111
+			background-color #FFFFF9
+			&:active
+				color $--color-primary - #111111
+				border-color $--color-primary - #111111
+				background-color #FFFFF9
+		&.is-disabled,
+		&.is-disabled:hover,
+		&.is-disabled:focus
+			color rgba($--color-text,0.5)
+			border-color rgba($--color-border,0.5)
+			background-color rgba(#FFFFF9,0.5)
+			cursor not-allowed
+	&--primary
+		color #FFFFFF
+		border-color $--color-primary - #111111
+		background-color $--color-primary
+		&:hover
+			border-color $--color-primary
+			background-color $--color-primary + #111111
+		&:active
+			border-color $--color-primary - #111111
+			background-color $--color-primary
+		&.is-disabled,
+		&.is-disabled:hover,
+		&.is-disabled:focus
+			border-color transparent
+			background-color rgba($--color-primary,0.5)
+			cursor not-allowed
+	&--info
+		color #FFFFFF
+		border-color $--color-info - #111111
+		background-color $--color-info
+		&:hover
+			border-color $--color-info
+			background-color $--color-info + #111111
+		&:active
+			border-color $--color-info - #111111
+			background-color $--color-info
+		&.is-disabled,
+		&.is-disabled:hover,
+		&.is-disabled:focus
+			border-color transparent
+			background-color rgba($--color-info,0.5)
+			cursor not-allowed
+	&--success
+		color #FFFFFF
+		border-color $--color-success - #111111
+		background-color $--color-success
+		&:hover
+			border-color $--color-success
+			background-color $--color-success + #111111
+		&:active
+			border-color $--color-success - #111111
+			background-color $--color-success
+		&.is-disabled,
+		&.is-disabled:hover,
+		&.is-disabled:focus
+			border-color transparent
+			background-color rgba($--color-success,0.5)
+			cursor not-allowed
+	&--warning
+		color #FFFFFF
+		border-color $--color-warning - #111111
+		background-color $--color-warning
+		&:hover
+			border-color $--color-warning
+			background-color $--color-warning + #111111
+		&:active
+			border-color $--color-warning - #111111
+			background-color $--color-warning
+		&.is-disabled,
+		&.is-disabled:hover,
+		&.is-disabled:focus
+			border-color transparent
+			background-color rgba($--color-warning,0.5)
+			cursor not-allowed
+	&--danger
+		color #FFFFFF
+		border-color $--color-error - #111111
+		background-color $--color-error
+		&:hover
+			border-color $--color-error
+			background-color $--color-error + #111111
+		&:active
+			border-color $--color-error - #111111
+			background-color $--color-error
+		&.is-disabled,
+		&.is-disabled:hover,
+		&.is-disabled:focus
+			border-color transparent
+			background-color rgba($--color-error,0.5)
+			cursor not-allowed
+	&--text
+		color $--color-primary
+		border 1px solid transparent
+		background-color transparent
+	&--medium
+		padding $-medium-padding-vertical  $-medium-padding-horizontal 
+		&.is-circle
+			padding $-medium-padding-vertical
+			border-radius 50%
+			i
+				font-size 18px
+	&--small
+		padding $-small-padding-vertical  $-small-padding-horizontal
+		&.is-circle
+			padding $-small-padding-vertical
+			border-radius 50%
+			i
+				font-size 14px
+	&.is-round
+		border-radius 20px

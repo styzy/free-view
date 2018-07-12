@@ -1,0 +1,52 @@
+@font-face
+	font-family 'freeView-icon'
+	src url('fonts/iconfont.woff') format('woff'), url('fonts/iconfont.ttf') format('truetype')
+	font-weight normal
+	font-style normal
+[class^='fv-icon-'], [class*=' fv-icon-']
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family 'freeView-icon' !important
+	font-style normal
+	font-size 14px
+	display inline-block
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	-webkit-text-stroke-width 0.2px
+// 字体图标
+.fv-icon-info:before
+	content '\e69b'
+.fv-icon-success:before
+	content '\e61b'
+.fv-icon-warning:before
+	content '\e612'
+.fv-icon-error:before
+	content '\e703'
+.fv-icon-close:before
+	content '\e63a'
+.fv-icon-search:before
+	content '\e605'
+.fv-icon-refresh:before
+	content '\e655'
+.fv-icon-next:before
+	content '\e617'
+.fv-icon-back:before
+	content '\e83a'
+.fv-icon-upload:before
+	content '\e634'
+.fv-icon-delete:before
+	content '\e602'
+.fv-icon-edit:before
+	content '\e60f'
+.fv-icon-share:before
+	content '\e643'
+.fv-icon-loading
+	animation rotating 2s linear infinite
+.fv-icon-loading:before
+	content '\e600'
+// 旋转动画
+@keyframes rotating
+	0%
+		transform rotateZ(0deg)
+	100%
+		transform rotateZ(360deg)

@@ -1,0 +1,38 @@
+@import 'color.styl'
+// 浮动清除
+baseAcf()
+	&:after
+		display block
+		clear both
+		zoom 1
+// 默认图片样式
+baseImg()
+	display block
+	margin auto
+	width 100%
+	border none
+// 链接样式
+baseLink()
+	text-decoration none
+	&:hover
+		text-decoration underline
+// Chrome滚动条样式
+baseScroll()
+	&::-webkit-scrollbar
+		width 8px
+		height 8px
+	&::-webkit-scrollbar-track-piece
+		background-color #EEEEEE
+	&::-webkit-scrollbar-thumb
+		border-radius 9px
+		background-color #CCCCCC
+	&::-webkit-scrollbar-thumb:hover
+		background-color #BBBBBB
+body
+	margin 0
+	padding 0
+	baseScroll()
+*
+	font-family 'Microsoft Yahei'
+a
+	text-decoration none

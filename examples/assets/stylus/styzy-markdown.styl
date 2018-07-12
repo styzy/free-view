@@ -1,0 +1,113 @@
+// 基础文本颜色
+$-color-title = #1f2f3d
+$-color-text = #5e6d82
+$-color-link = #30a8ff
+$-color-border = #EEEEEE
+$-color-inlineCode-text = #5e6d82
+$-color-inlineCode-bg = #e6effb
+// 通用代码颜色
+$-color-code-common-default = #666666
+$-color-code-common-string = #845bd0
+$-color-code-common-keyword = #01a7e8
+$-color-code-common-boolean = #31a354
+// 边框颜色
+$-color-border-code = $-color-border
+$-color-border-demo = $-color-border
+// shell
+$-color-code-shell = $-color-code-common-default
+// html
+$-color-code-html-tag = $-color-code-common-keyword
+$-color-code-html-tagName = $-color-code-html-tag
+$-color-code-html-attr = $-color-code-html-tag
+$-color-code-html-string = $-color-code-common-string
+// js
+$-color-code-js-keyword = $-color-code-common-keyword
+$-color-code-js-string = $-color-code-common-string
+$-color-code-js-attr = $-color-code-common-keyword
+$-color-code-js-boolean = $-color-code-common-boolean
+// json
+$-color-code-json-string = $-color-code-common-string
+$-color-code-json-attr = $-color-code-common-keyword
+$-color-code-json-boolean = $-color-code-common-boolean
+// 注释颜色
+$-color-note-common-default = #999999
+$-color-note-html = $-color-note-common-default
+.styzy-markdown-body
+	h1, h2, h3, h4, h5, h6
+		color $-color-title
+	h2
+		padding-top 30px
+		font-size 30px
+		font-weight 400
+	h3
+		padding-top 30px
+		font-size 20px
+		font-weight 400
+	h4
+		margin 20px 0
+		font-size 16px
+		font-weight 400
+	p
+		padding 5px 0
+		line-height 1.8
+		font-size 14px
+		color $-color-text
+		code
+			padding 5px 8px
+			color $-color-inlineCode-text
+			background-color $-color-inlineCode-bg
+	a
+		text-decoration none
+		color $-color-link
+		transition 0.3s
+		&:hover
+			color $-color-link + #111111
+	// 代码颜色
+	pre
+		padding 20px
+		border 1px solid $-color-border-code
+		*
+			font-family 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace
+		// 注释
+		.hljs-comment
+			font-size 12px
+			color $-color-note-html
+			line-height 1.5
+		// 所有语言code公用样式
+		[class^='language-']
+			color $-color-code-common-default
+			font-size 13px
+			line-height 1.5
+		// shell
+		.language-
+			&shell
+				color $-color-code-shell
+			&html
+				.hljs-
+					&tag
+						color $-color-code-html-tag
+						line-height 2
+					&name
+						color $-color-code-html-tagName
+					&attr
+						color $-color-code-html-attr
+					&string
+						color $-color-code-html-string
+			&javascript
+				.hljs-
+					&keyword
+						color $-color-code-js-keyword
+					&string
+						color $-color-code-js-string
+					&attr
+						color $-color-code-js-attr
+					&literal
+						color $-color-code-js-boolean
+			&json
+				.hljs-
+					&string
+						color $-color-code-json-string
+					&attr
+						color $-color-code-json-attr
+					&literal
+						color $-color-code-json-boolean
