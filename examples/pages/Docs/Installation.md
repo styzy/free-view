@@ -16,7 +16,7 @@ npm i free-view -S
 <!-- 引入样式 -->
 <link rel="stylesheet" href="https://unpkg.com/free-view/lib/css/index.css">
 <!-- 引入组件库 -->
-<script src="https://unpkg.comfree-view/lib/index.js"></script>
+<script src="https://unpkg.com/free-view/lib/index.js"></script>
 ```
 
 <br>
