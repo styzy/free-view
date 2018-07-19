@@ -3,6 +3,7 @@ $-color-title = #1f2f3d
 $-color-text = #5e6d82
 $-color-link = #30a8ff
 $-color-border = #EEEEEE
+$-color-boxShadow = #EEEEEE
 $-color-inlineCode-text = #5e6d82
 $-color-inlineCode-bg = #e6effb
 // 通用代码颜色
@@ -16,6 +17,7 @@ $-color-border-demo = $-color-border
 // shell
 $-color-code-shell = $-color-code-common-default
 // html
+$-color-code-html-keyword = $-color-code-common-keyword
 $-color-code-html-tag = $-color-code-common-keyword
 $-color-code-html-tagName = $-color-code-html-tag
 $-color-code-html-attr = $-color-code-html-tag
@@ -53,7 +55,7 @@ $-color-note-html = $-color-note-common-default
 		font-size 14px
 		color $-color-text
 		code
-			padding 5px 8px
+			padding 3px 8px
 			color $-color-inlineCode-text
 			background-color $-color-inlineCode-bg
 	a
@@ -84,6 +86,8 @@ $-color-note-html = $-color-note-common-default
 				color $-color-code-shell
 			&html
 				.hljs-
+					&keyword
+						color $-color-code-html-keyword
 					&tag
 						color $-color-code-html-tag
 						line-height 2
@@ -111,3 +115,28 @@ $-color-note-html = $-color-note-common-default
 						color $-color-code-json-attr
 					&literal
 						color $-color-code-json-boolean
+	table
+		display table
+		width 100%
+		&:hover
+			box-shadow 0 0 5px 0 $-color-boxShadow
+		th
+			padding 10px
+			text-align left
+			color $-color-title
+			border-color $-color-border
+			font-weight 400
+			// border-right none
+			// border-left none
+			font-size 16px
+			line-height 1.5
+		td
+			padding 10px
+			text-align left
+			color $-color-text
+			border-color $-color-border
+			font-weight 400
+			// border-right none
+			// border-left none
+			font-size 14px
+			line-height 1.5

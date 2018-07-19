@@ -18,11 +18,15 @@
 	.view-ctn
 		.markdown-body.styzy-markdown-body
 			router-view
+	// vue-slide2top
 </template>
 
 <script>
 export default {
 	name: 'component-page',
+	components: {
+		// 'vue-slide2top': () => import('../components/slideToTop.vue')
+	},
 	data() {
 		return {
 			linkMap: {
@@ -40,7 +44,11 @@ export default {
 						text: 'Button 按钮',
 						routerName: 'Component-Button',
 						doc: 'button'
-					},],
+					}, {
+						text: 'icon 图标',
+						routerName: 'Component-Icon',
+						doc: 'icon'
+					}],
 					notice: [{
 						text: 'Message 消息提示',
 						routerName: 'Component-Message',
@@ -80,7 +88,6 @@ export default {
 		height calc(100vh - 80px)
 		overflow-y auto
 		box-sizing border-box
-		border-right 1px solid color-border
 		baseScroll()
 		.wrap
 			margin-top 50px
@@ -112,5 +119,16 @@ export default {
 			min-width 200px
 			max-width 900px
 			margin 0 auto
-			padding 0 45px 45px
+			padding 0 45px 150px
+@media screen and (max-width: 750px)
+	.component-page
+		.menu-ctn
+			position relative
+			top 0
+			width 100%
+			height auto
+			box-sizing border-box
+			padding 0 40px 20px 30%
+		.view-ctn
+			margin-left 0
 </style>

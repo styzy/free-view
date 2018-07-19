@@ -1,11 +1,12 @@
 <template>
 	<transition name="fv-message-fade">
-		<div v-show="visible" :class="['fv-message','fv-message--'+ type,{'is-center' : center},{'is-closeable' : showClose},{'is-fullScreen':fullScreen}]" @mouseenter="clearTimer" @mouseleave="startTimer">
+		<div v-show="visible" :class="['fv-message','fv-message--'+ type,{'is-center' : center},{'is-closeable' : showClose},{'is-fullScreen':fullScreen},customClass]" @mouseenter="clearTimer" @mouseleave="startTimer">
 			<i :class="iconClass" v-if="iconClass"></i>
 			<i :class="typeClass" v-else></i>
-			<div class="fv-message__content">
-				{{message}}
-			</div>
+			<slot>
+				<p v-if="!dangerouslyUseHTMLString" class="fv-message__content">{{message}}</p>
+				<p v-else v-html="message" class="el-message__content"></p>
+			</slot>
 			<i v-if="showClose" class="fv-message__closeBtn fv-icon-close" @click="close"></i>
 		</div>
 	</transition>
@@ -18,19 +19,21 @@ export default {
 			visible: false,
 			message: '',
 			duration: 3000,
-			type: 'info',
+			type: 'default',
 			fullScreen: false,
 			iconClass: '',
+			customClass: '',
 			onClose: null,
 			showClose: false,
 			closed: false,
 			timer: null,
-			center: false
+			center: false,
+			dangerouslyUseHTMLString: false
 		}
 	},
 	computed: {
 		typeClass() {
-			return 'fv-icon-' + this.type
+			return 'fv-icon-' + (this.type != 'default' ? this.type : 'info')
 		}
 	},
 	watch: {
@@ -39,14 +42,12 @@ export default {
 			if (newVal) {
 				this.visible = false;
 				this.$el.addEventListener('transitionend', this.destroyElement);
-				console.log(this.$el);
 			}
 		},
 	},
 	methods: {
 		// 删除
 		destroyElement() {
-			console.log(1);
 			this.$el.removeEventListener('transitionend', this.destroyElement);
 			this.$destroy(true);
 			this.$el.parentNode.removeChild(this.$el);

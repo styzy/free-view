@@ -2,7 +2,7 @@
 	<button 
 		class="fv-button" 
 		@click="clickHandler" 
-		:disable="buttonDisabled || loading" 
+		:disabled="buttonDisabled || loading" 
 		:type="nativeType"
 		:class="[
 			type ? 'fv-button--' + type : '',
@@ -37,6 +37,9 @@ export default {
 		size: {
 			type: String,
 			default: 'medium',
+			validator: (size) => {
+				return ['medium', 'small', 'mini'].indexOf(size) >= 0
+			}
 		},
 		icon: {
 			type: String,
@@ -64,7 +67,7 @@ export default {
 	},
 	methods: {
 		clickHandler(e) {
-			if(this.buttonDisabled){
+			if (this.buttonDisabled) {
 				return false
 			}
 			this.$emit('click', e)

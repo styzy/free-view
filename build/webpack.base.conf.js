@@ -22,6 +22,7 @@ module.exports = {
         alias: {
             'src': resolve('src/'),
             'free-view': resolve('./'),
+            '@': resolve('./')
         }
     },
     module: {

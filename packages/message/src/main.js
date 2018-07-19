@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Main from './main.vue'
 import { PopupManager } from 'free-view/src/utils/popup/index.js'
+import { isVNode } from 'free-view/src/utils/vdom'
 let MessageConstructor = Vue.extend(Main)
 
 // 实例
@@ -39,6 +40,12 @@ const Message = (options) => {
 
     // 配置实例id
     instance.id = id;
+
+    // vdom渲染
+    if (isVNode(instance.message)) {
+        instance.$slots.default = [instance.message];
+        instance.message = null
+    }
 
     // 配置vue实例到message实例
     instance.vm = instance.$mount();

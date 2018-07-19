@@ -19,7 +19,7 @@
 		a.vue(href="https://cn.vuejs.org/" target="_blank") Vue 2.x
 		|  version perfectly.
 	.start-ctn
-		.guide-text 想要了解更多组件细节信息?
+		.guide-text 立刻体验?
 		.btn-ctn
 			fv-button(type="primary",@click="start") 点击开始
 		.guide-tip 查看官方示例

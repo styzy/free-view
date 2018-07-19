@@ -7,11 +7,13 @@ import 'src/styl/index.styl'
 import 'github-markdown-css'
 import './assets/stylus/styzy-markdown.styl'
 import DemoBox from './components/demo-box.vue'
+import Warning from './components/warning-box.vue'
 
 Vue.config.productionTip = false
 Vue.use(FreeView)
 Vue.use(VueClipboards)
 Vue.component(DemoBox.name, DemoBox)
+Vue.component(Warning.name, Warning)
 
 //实例化vue对象
 const app = new Vue({

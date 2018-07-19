@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     routes: [{
         path: '/',
         name: 'Index',
@@ -32,7 +32,7 @@ export default new Router({
         meta: {
             module: 'component'
         },
-		redirect: {name:'Component-Installation'},
+        redirect: { name: 'Component-Installation' },
         children: [{
             path: 'installation',
             name: 'Component-Installation',
@@ -48,6 +48,13 @@ export default new Router({
             },
             component: resolve => require(['../pages/Docs/Quickstart.md'], resolve),
         }, {
+            path: 'icon',
+            name: 'Component-Icon',
+            meta: {
+                doc: 'icon'
+            },
+            component: resolve => require(['../pages/Docs/Icon.md'], resolve),
+        }, {
             path: 'button',
             name: 'Component-Button',
             meta: {
@@ -62,5 +69,12 @@ export default new Router({
             },
             component: resolve => require(['../pages/Docs/Message.md'], resolve),
         }]
-    }]
+    }],
 })
+
+router.beforeEach((to, from, next) => {
+    window.scrollTo(0, 0)
+    next()
+})
+
+export default router

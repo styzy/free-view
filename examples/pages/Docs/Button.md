@@ -205,3 +205,138 @@
 ```
 
 </demo-box>
+
+### 按钮组
+
+以按钮组的方式出现，常用于多项类似操作。
+
+#### 正常
+
+<demo-box>
+
+<template slot="demo">
+	<fv-button-group>
+		<fv-button type="primary" icon="fv-icon-back">后退</fv-button>
+		<fv-button type="primary">前进<i class="fv-icon-next"></i></fv-button>
+	</fv-button-group>
+	<fv-button-group>
+		<fv-button type="primary" size="small" icon="fv-icon-success"></fv-button>
+		<fv-button type="primary" size="small" icon="fv-icon-share"></fv-button>
+		<fv-button type="primary" size="small" icon="fv-icon-delete"></fv-button>
+	</fv-button-group>
+</template>
+
+使用 `<fv-button-group>` 标签来嵌套你的按钮。
+
+```html
+<fv-button-group>
+  <fv-button type="primary" icon="fv-icon-back">后退</fv-button>
+  <fv-button type="primary">前进<i class="fv-icon-next"></i></fv-button>
+</fv-button-group>
+
+<fv-button-group>
+  <fv-button type="primary" size="small" icon="fv-icon-search"></fv-button>
+  <fv-button type="primary" size="small" icon="fv-icon-share"></fv-button>
+  <fv-button type="primary" size="small" icon="fv-icon-delete"></fv-button>
+</fv-button-group>
+```
+
+</demo-box>
+
+#### 圆角和圆形按钮
+
+<demo-box>
+
+<template slot="demo">
+	<fv-button-group>
+		<fv-button type="primary" round icon="fv-icon-edit"></fv-button>
+		<fv-button type="primary" round icon="fv-icon-share"></fv-button>
+		<fv-button type="primary" round icon="fv-icon-upload"></fv-button>
+	</fv-button-group>
+	<fv-button-group>
+		<fv-button type="primary" circle icon="fv-icon-edit"></fv-button>
+		<fv-button type="primary" circle icon="fv-icon-share"></fv-button>
+		<fv-button type="primary" circle icon="fv-icon-upload"></fv-button>
+	</fv-button-group>
+</template>
+
+使用 `<fv-button-group>` 标签来嵌套你的按钮。
+
+```html
+<fv-button-group>
+  <fv-button type="primary" round icon="fv-icon-edit"></fv-button>
+  <fv-button type="primary" round icon="fv-icon-share"></fv-button>
+  <fv-button type="primary" round icon="fv-icon-upload"></fv-button>
+</fv-button-group>
+
+<fv-button-group>
+  <fv-button type="primary" circle icon="fv-icon-edit"></fv-button>
+  <fv-button type="primary" circle icon="fv-icon-share"></fv-button>
+  <fv-button type="primary" circle icon="fv-icon-upload"></fv-button>
+</fv-button-group>
+```
+
+</demo-box>
+
+### 加载中
+
+点击按钮后进行数据加载操作，在按钮上显示加载状态。
+
+<demo-box>
+
+<template slot="demo">
+	<fv-button type="primary" :loading="true">加载中</fv-button>
+</template>
+
+要设置为 loading 状态，只要设置 `loading` 属性为 `true` 即可。
+
+```html
+<fv-button type="primary" :loading="true">加载中</fv-button>
+```
+
+</demo-box>
+
+### 不同尺寸
+
+Button 组件提供除了默认值以外的两种尺寸，可以在不同场景下选择合适的按钮尺寸。
+
+<demo-box>
+
+<template slot="demo">
+	<div class="row">
+		<fv-button type="primary" >默认按钮</fv-button>
+		<fv-button type="primary" size="small" >小型按钮</fv-button>
+		<fv-button type="primary" size="mini" >迷你按钮</fv-button>
+	</div>
+	<div class="row">
+		<fv-button round >默认按钮</fv-button>
+		<fv-button round size="small" >小型按钮</fv-button>
+		<fv-button round size="mini" >迷你按钮</fv-button>
+	</div>
+</template>
+
+
+```html
+<fv-button type="primary" >默认按钮</fv-button>
+<fv-button type="primary" size="small" >小型按钮</fv-button>
+<fv-button type="primary" size="mini" >迷你按钮</fv-button>
+
+<fv-button round >默认按钮</fv-button>
+<fv-button round size="small" >小型按钮</fv-button>
+<fv-button round size="mini" >迷你按钮</fv-button>
+```
+
+</demo-box>
+
+### 详细属性列表
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| ---- | ---- | ---- | ---- | ---- |
+| size | 尺寸 | String | medium / small / mini | meduim |
+| type | 类型 | String | primary / success / warning / danger / info / text | - |
+| round | 是否圆角按钮 | Boolean | - | false |
+| circle | 是否圆形按钮 | Boolean | - | false |
+| loading | 是否加载中状态 | Boolean | - | false |
+| disabled | 是否禁用状态 | Boolean | - | false |
+| icon | 图标类名 | String | — | — |
+| native-type | 原生 type 属性 | String | button / submit / reset | button |

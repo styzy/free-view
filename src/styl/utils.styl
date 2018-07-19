@@ -1,2 +1,9 @@
 @import ('color.styl')
 $--border-radius = 4px
+// 清楚浮动
+utils-cf()
+	&:before, &:after
+		display table
+		content ''
+	&:after
+		clear both

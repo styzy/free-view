@@ -1,7 +1,7 @@
 @import 'utils.styl'
 $-medium-padding-vertical = 12px
 $-medium-padding-horizontal = 20px
-$-small-padding-vertical = 9px 
+$-small-padding-vertical = 9px
 $-small-padding-horizontal = 12px
 .fv-button
 	display inline-block
@@ -15,6 +15,7 @@ $-small-padding-horizontal = 12px
 	outline none
 	transition 0.15s
 	box-sizing border-box
+	font-weight 500
 	user-select none
 	cursor pointer
 	&--default
@@ -28,111 +29,112 @@ $-small-padding-horizontal = 12px
 			&:active
 				color $--color-primary - #111111
 				border-color $--color-primary - #111111
-				background-color #FFFFF9
-		&.is-disabled,
-		&.is-disabled:hover,
-		&.is-disabled:focus
-			color rgba($--color-text,0.5)
-			border-color rgba($--color-border,0.5)
-			background-color rgba(#FFFFF9,0.5)
+				background-color rgba($--color-primary, 0.1)
+		&.is-disabled, &.is-disabled:hover, &.is-disabled:focus
+			color rgba($--color-text, 0.5)
+			border-color rgba($--color-border, 0.5)
+			background-color rgba(#FFFFF9, 0.5)
 			cursor not-allowed
 	&--primary
 		color #FFFFFF
-		border-color $--color-primary - #111111
+		border-color $--color-primary - #181818
 		background-color $--color-primary
 		&:hover
-			border-color $--color-primary
 			background-color $--color-primary + #111111
 		&:active
-			border-color $--color-primary - #111111
-			background-color $--color-primary
-		&.is-disabled,
-		&.is-disabled:hover,
-		&.is-disabled:focus
+			background-color $--color-primary - #111111
+		&.is-disabled, &.is-disabled:hover, &.is-disabled:focus
 			border-color transparent
-			background-color rgba($--color-primary,0.5)
+			background-color rgba($--color-primary, 0.5)
 			cursor not-allowed
 	&--info
 		color #FFFFFF
-		border-color $--color-info - #111111
+		border-color $--color-info - #181818
 		background-color $--color-info
 		&:hover
-			border-color $--color-info
 			background-color $--color-info + #111111
 		&:active
-			border-color $--color-info - #111111
-			background-color $--color-info
-		&.is-disabled,
-		&.is-disabled:hover,
-		&.is-disabled:focus
+			background-color $--color-info - #111111
+		&.is-disabled, &.is-disabled:hover, &.is-disabled:focus
 			border-color transparent
-			background-color rgba($--color-info,0.5)
+			background-color rgba($--color-info, 0.5)
 			cursor not-allowed
 	&--success
 		color #FFFFFF
-		border-color $--color-success - #111111
+		border-color $--color-success - #181818
 		background-color $--color-success
 		&:hover
-			border-color $--color-success
 			background-color $--color-success + #111111
 		&:active
-			border-color $--color-success - #111111
-			background-color $--color-success
-		&.is-disabled,
-		&.is-disabled:hover,
-		&.is-disabled:focus
+			background-color $--color-success - #111111
+		&.is-disabled, &.is-disabled:hover, &.is-disabled:focus
 			border-color transparent
-			background-color rgba($--color-success,0.5)
+			background-color rgba($--color-success, 0.5)
 			cursor not-allowed
 	&--warning
 		color #FFFFFF
-		border-color $--color-warning - #111111
+		border-color $--color-warning - #181818
 		background-color $--color-warning
 		&:hover
-			border-color $--color-warning
 			background-color $--color-warning + #111111
 		&:active
-			border-color $--color-warning - #111111
-			background-color $--color-warning
-		&.is-disabled,
-		&.is-disabled:hover,
-		&.is-disabled:focus
+			background-color $--color-warning - #111111
+		&.is-disabled, &.is-disabled:hover, &.is-disabled:focus
 			border-color transparent
-			background-color rgba($--color-warning,0.5)
+			background-color rgba($--color-warning, 0.5)
 			cursor not-allowed
 	&--danger
 		color #FFFFFF
-		border-color $--color-error - #111111
+		border-color $--color-error - #181818
 		background-color $--color-error
 		&:hover
-			border-color $--color-error
 			background-color $--color-error + #111111
 		&:active
-			border-color $--color-error - #111111
-			background-color $--color-error
-		&.is-disabled,
-		&.is-disabled:hover,
-		&.is-disabled:focus
+			background-color $--color-error - #111111
+		&.is-disabled, &.is-disabled:hover, &.is-disabled:focus
 			border-color transparent
-			background-color rgba($--color-error,0.5)
+			background-color rgba($--color-error, 0.5)
 			cursor not-allowed
 	&--text
 		color $--color-primary
 		border 1px solid transparent
 		background-color transparent
 	&--medium
-		padding $-medium-padding-vertical  $-medium-padding-horizontal 
+		font-size 14px
+		padding $-medium-padding-vertical $-medium-padding-horizontal
 		&.is-circle
-			padding $-medium-padding-vertical
+			padding $-medium-padding-vertical - 2
 			border-radius 50%
 			i
 				font-size 18px
 	&--small
-		padding $-small-padding-vertical  $-small-padding-horizontal
+		font-size 14px
+		padding $-small-padding-vertical $-small-padding-horizontal
 		&.is-circle
-			padding $-small-padding-vertical
+			padding $-small-padding-vertical - 1
 			border-radius 50%
 			i
 				font-size 14px
+	&--mini
+		font-size 12px
+		padding $-small-padding-vertical - 2 ((((((((($-small-padding-horizontal - 2)))))))))
+		&.is-circle
+			padding $-small-padding-vertical - 2.5 ($-small-padding-vertical - 2)
+			border-radius 50%
+			i
+				font-size 12px
 	&.is-round
 		border-radius 20px
+	&.is-loading
+		position relative
+		pointer-events none
+		&:before
+			pointer-events none
+			content ''
+			position absolute
+			left -1px
+			top -1px
+			right -1px
+			bottom -1px
+			border-radius inherit
+			background-color rgba(255, 255, 255, 0.35)
