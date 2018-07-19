@@ -10,8 +10,8 @@ var chalk = require('chalk')
 var webpack = require('webpack')
 var config = require('../config')
 
-// 这里同理复制一份 webpack.prod.conf.js 修改成 webpack.prodLib.conf.js
-var webpackConfig = require('./webpack.prodLib.conf')
+// 这里同理复制一份 webpack.prod.conf.js 修改成 webpack.prod.lib.conf.js
+var webpackConfig = require('./webpack.prod.lib.conf')
 
 var spinner = ora('building for production...')
 spinner.start()
