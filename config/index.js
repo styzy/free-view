@@ -74,7 +74,7 @@ module.exports = {
         env: require('./prod.lib.env.js'),
         assetsRoot: path.resolve(__dirname, '../lib'),
         assetsPublicPath: '/lib/',
-        filename: 'freeView.min.js',
+        filename: 'index.js',
         library: 'freeViewLib',
         bundleAnalyzerReport: process.env.npm_config_report
     },
@@ -87,6 +87,6 @@ module.exports = {
         output: path.resolve(__dirname, '../lib/css/'),
         outputFonts: path.resolve(__dirname, '../lib/css/fonts'),
         // 输出文件名称
-        filename: 'freeView.min.css'
+        filename: 'index.css'
     }
 }
