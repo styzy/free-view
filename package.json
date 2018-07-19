@@ -4,7 +4,8 @@
     "description": "A Component Library for Vue.js.",
     "author": "STYZY <styzyreal@126.com>",
     "private": false,
-    "main": "lib/freeView.min.js",
+    "main": "lib/index.js",
+    "style": ["lib/css/index.css"],
     "scripts": {
         "dev": "node build/dev-server.js",
         "dev:demo": "node build/dev-examples-server.js",
