@@ -1,14 +1,15 @@
 <template lang="pug">
 .about-page
-	h1 关于
-	vue-header
+	vue-md-ctn
+		md-about
 </template>
 
 <script>
 export default {
 	name: 'about-page',
 	components: {
-		'vue-header': () => import('../components/header.vue')
+		'vue-md-ctn': () => import('../components/markdown-ctn.vue'),
+		'md-about': () => import('../pages/Docs/About.md')
 	}
 }
 </script>

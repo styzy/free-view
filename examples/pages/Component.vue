@@ -16,7 +16,7 @@
 				router-link(:to="{name:item.routerName}")
 					.link(:class="{'selected' : routerDoc == item.doc}") {{item.text}}
 	.view-ctn
-		.markdown-body.styzy-markdown-body
+		vue-md-ctn
 			router-view
 	// vue-slide2top
 </template>
@@ -25,7 +25,7 @@
 export default {
 	name: 'component-page',
 	components: {
-		// 'vue-slide2top': () => import('../components/slideToTop.vue')
+		'vue-md-ctn': () => import('../components/markdown-ctn.vue')
 	},
 	data() {
 		return {
@@ -114,12 +114,6 @@ export default {
 	.view-ctn
 		position relative
 		margin-left 200px
-		.markdown-body
-			box-sizing border-box
-			min-width 200px
-			max-width 900px
-			margin 0 auto
-			padding 0 45px 150px
 @media screen and (max-width: 750px)
 	.component-page
 		.menu-ctn
